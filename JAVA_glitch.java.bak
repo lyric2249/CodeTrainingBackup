@@ -1,0 +1,30 @@
+
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		int number=1;
+		System.out.println(number);
+		//number=2;
+		System.out.println(number);
+		// \u000a number=3;
+		System.out.println(number);
+		/*
+			\u002A\u002F number=4;
+				System.out.println("범위형 주석 무효화 확인");
+		// */
+		System.out.println(number);
+	}
+}
+
+// 1. java complier는 컴파일 프론트엔드 과정 중의 하나인 구문 분석 처리 과정에서 
+// 유니코드를 먼저 인식하여 처리하므로 LF(Line Feed)에 해당하는 유니코드 000a에 따라 
+// number = 3을 10번째 라인으로 떨구게 되며 주석이 무효화되는 효과가 발생한다.
+
+// 2. 범위형 주석의 경우 002A 002F는 각각 */에 해당하기 때문에
+// /* u002Au002F 는 /**/라고 작성한것과 동일해
+// 주석이 닫히는 효과가 생겨 주석이 무효화되는것처럼 보이게 된다.
+
+
+
